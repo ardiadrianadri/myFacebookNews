@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { FaceBookDataService } from './core/facebook.service';
 
-import { FacebookState, FacebookAction, FaceBookActionTypes, FaceBookStateTypes } from './core/facebook-types';
+import { FacebookState, FacebookAction, FaceBookActionTypes, FaceBookStateTypes, FacebookData } from './core/facebook-types';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
   public title = AppComponent.defaultTitle;
   public stateStr: FaceBookStateTypes;
   public stateNotConnected = FaceBookStateTypes.NOT_CONNECTED;
+  public dataFaceBook: FacebookData;
 
   constructor( private _facebookData: FaceBookDataService ) {}
 
@@ -44,10 +45,11 @@ export class AppComponent implements OnInit {
     this._facebookData.actions.next(action);
   }
 
-  private _updateState (newState: FacebookState) {
+  private _updateState (newState: any) {
     switch (newState.state) {
       case FaceBookStateTypes.IDENTIFIED:
         this.title = `Welcome ${newState.data.name} to your personal news paper`;
+        this.dataFaceBook = newState.data.posts.data[0];
         break;
       case FaceBookStateTypes.NOT_CONNECTED:
         this.title = AppComponent.defaultTitle;

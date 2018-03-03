@@ -2,7 +2,8 @@ export enum FaceBookActionTypes {
   LOGIN,
   LOGOUT,
   PROFILE,
-  IDENTIFY
+  IDENTIFY,
+  GET_POST,
 }
 
 export enum FaceBookStateTypes {
