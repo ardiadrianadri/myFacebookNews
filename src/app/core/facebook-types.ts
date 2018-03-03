@@ -47,7 +47,7 @@ export interface FacebookData {
   full_picture: string;
   message: string;
   description: string;
-  attachments: Attachments;
+  attachments?: Attachments;
 }
 
 export interface IndexesArticle {

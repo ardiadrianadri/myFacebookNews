@@ -19,7 +19,7 @@ export class ArticleComponent implements OnInit {
   };
 
   @Output()
-  public actionClose: EventEmitter<boolean> = new EventEmitter<boolean>();
+  public actionClose: EventEmitter<IndexesArticle> = new EventEmitter<IndexesArticle>();
 
   public title = 'For Gods sake, do not be lazy and write something';
   public defaultImage = 'assets/sad.jpeg';
@@ -36,7 +36,7 @@ export class ArticleComponent implements OnInit {
   }
 
   public onClose () {
-    this.actionClose.emit(true);
+    this.actionClose.emit(this.classification);
   }
 
   @HostListener('mouseenter')

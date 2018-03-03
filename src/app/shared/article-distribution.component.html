@@ -1,6 +1,6 @@
 <div *ngIf="dataFaceBook">
     <div class="firstLine">
-        <fpn-article [facebookData]="firstLineData" [classification]="{index: 0, line: 0}"></fpn-article>
+        <fpn-article [facebookData]="firstLineData" [classification]="{index: 0, line: 0}" (actionClose)="removeArticle($event)"></fpn-article>
     </div>
     <div class="secondLine">
         <fpn-article
@@ -8,12 +8,14 @@
         [facebookData]="article"
         class="element-second-line"
         [classification]="{index: i, line: 1}"
+        (actionClose)="removeArticle($event)"
         ></fpn-article>
     </div>
     <div class="thirdLine">
         <fpn-article
         *ngFor="let article of thirdLineData; index as i"
         [facebookData]="article"
-        [classification]="{index: i, line: 2}"></fpn-article>
+        [classification]="{index: i, line: 2}"
+        (actionClose)="removeArticle($event)"></fpn-article>
     </div>
 </div>
