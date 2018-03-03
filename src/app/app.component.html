@@ -11,4 +11,4 @@
   </mat-toolbar-row>
 </mat-toolbar>
 <br/>
-<fpn-distribution [dataFaceBook]="dataFaceBook" ></fpn-distribution>
+<fpn-distribution *ngIf="dataFaceBook" [dataFaceBook]="dataFaceBook" ></fpn-distribution>

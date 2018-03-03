@@ -1,15 +1,15 @@
-<div class="article" [ngClass]="{'active': active}">
-  <div class="header" [ngClass]="{'class-1': classification === 1, 'class-2': classification === 2}">
-      <span class="title" >{{facebookData.message}}</span>
+<div class="article" [ngClass]="{'active': active, 'class-1': classification.line === 1, 'class-2': classification.line === 2}">
+  <div class="header" [ngClass]="{'class-1': classification.line === 1, 'class-2': classification.line === 2}">
+      <span class="title" >{{title}}</span>
       <mat-icon class="material-icons clickable clickable" *ngIf="active" (click)="onClose()">close</mat-icon>
   </div>
   <div class="body">
     <div class="media">
-        <img [ngClass]="{'class-1': classification === 1, 'class-2': classification === 2}" src="{{facebookData.full_picture}}" alt="" />
+        <img [ngClass]="{'class-1': classification.line === 1, 'class-2': classification.line === 2}" src="{{defaultImage}}" alt="" />
       </div>
-      <div class="text">
+      <div class="text" [ngClass]="{'class-1': classification.line === 1, 'class-2': classification.line === 2}">
         <span class="description">
-            {{facebookData.description}}
+            {{defaultMessage}}
         </span>
       </div>
   </div>

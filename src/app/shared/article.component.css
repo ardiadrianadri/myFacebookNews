@@ -4,6 +4,14 @@ div.article {
   border-radius: 16px;
 }
 
+div.article.class-1 {
+  height: 315px;
+}
+
+div.article.class-2 {
+  height: 315px;
+}
+
 div.article.active {
   box-shadow: 10px 10px grey;
 }
@@ -38,6 +46,13 @@ div.body
 div.text {
   padding: 0% 2% 2% 2%;
   font-size: medium;
+}
+
+div.article
+div.body
+div.text.class-2 {
+  padding: 0% 2% 2% 2%;
+  font-size: small;
 }
 
 div.article

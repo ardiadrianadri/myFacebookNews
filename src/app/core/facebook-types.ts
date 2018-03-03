@@ -49,3 +49,8 @@ export interface FacebookData {
   description: string;
   attachments: Attachments;
 }
+
+export interface IndexesArticle {
+  line: number;
+  index: number;
+}

@@ -1,14 +1,19 @@
 <div *ngIf="dataFaceBook">
     <div class="firstLine">
-        <fpn-article [facebookData]="dataFaceBook" [classification]="0" *ngIf="dataFaceBook"></fpn-article>
+        <fpn-article [facebookData]="firstLineData" [classification]="{index: 0, line: 0}"></fpn-article>
     </div>
     <div class="secondLine">
-        <fpn-article [facebookData]="dataFaceBook" class="element-second-line" [classification]="1" *ngIf="dataFaceBook"></fpn-article>
-        <fpn-article [facebookData]="dataFaceBook" class="element-second-line" [classification]="1" *ngIf="dataFaceBook"></fpn-article>
+        <fpn-article
+        *ngFor="let article of secondLineData; index as i"
+        [facebookData]="article"
+        class="element-second-line"
+        [classification]="{index: i, line: 1}"
+        ></fpn-article>
     </div>
     <div class="thirdLine">
-        <fpn-article [facebookData]="dataFaceBook" [classification]="2" *ngIf="dataFaceBook"></fpn-article>
-        <fpn-article [facebookData]="dataFaceBook" [classification]="2" *ngIf="dataFaceBook"></fpn-article>
-        <fpn-article [facebookData]="dataFaceBook" [classification]="2" *ngIf="dataFaceBook"></fpn-article>
+        <fpn-article
+        *ngFor="let article of thirdLineData; index as i"
+        [facebookData]="article"
+        [classification]="{index: i, line: 2}"></fpn-article>
     </div>
 </div>

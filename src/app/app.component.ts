@@ -49,7 +49,7 @@ export class AppComponent implements OnInit {
     switch (newState.state) {
       case FaceBookStateTypes.IDENTIFIED:
         this.title = `Welcome ${newState.data.name} to your personal news paper`;
-        this.dataFaceBook = newState.data.posts.data[0];
+        this.dataFaceBook = newState.data.posts.data;
         break;
       case FaceBookStateTypes.NOT_CONNECTED:
         this.title = AppComponent.defaultTitle;
