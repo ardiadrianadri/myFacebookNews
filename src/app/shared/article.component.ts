@@ -12,6 +12,9 @@ export class ArticleComponent implements OnInit {
   @Input()
   public facebookData: FacebookData;
 
+  @Input()
+  public classification = 0;
+
   @Output()
   public actionClose: EventEmitter<boolean> = new EventEmitter<boolean>();
 

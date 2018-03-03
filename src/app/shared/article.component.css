@@ -18,6 +18,16 @@ div.header {
 }
 
 div.article
+div.header.class-1 {
+  font-size: large;
+}
+
+div.article
+div.header.class-2 {
+  font-size: medium;
+}
+
+div.article
 div.body {
   display: flex;
   justify-content: space-around;
@@ -35,5 +45,19 @@ div.body
 div.media
 img {
   padding: 0% 2% 2% 2%;
-  width: 850px;
+  width: 550px;
+}
+
+div.article
+div.body
+div.media
+img.class-1 {
+  width: 250px;
+}
+
+div.article
+div.body
+div.media
+img.class-2 {
+  width: 150px;
 }

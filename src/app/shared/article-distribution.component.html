@@ -1,0 +1,14 @@
+<div *ngIf="dataFaceBook">
+    <div class="firstLine">
+        <fpn-article [facebookData]="dataFaceBook" [classification]="0" *ngIf="dataFaceBook"></fpn-article>
+    </div>
+    <div class="secondLine">
+        <fpn-article [facebookData]="dataFaceBook" class="element-second-line" [classification]="1" *ngIf="dataFaceBook"></fpn-article>
+        <fpn-article [facebookData]="dataFaceBook" class="element-second-line" [classification]="1" *ngIf="dataFaceBook"></fpn-article>
+    </div>
+    <div class="thirdLine">
+        <fpn-article [facebookData]="dataFaceBook" [classification]="2" *ngIf="dataFaceBook"></fpn-article>
+        <fpn-article [facebookData]="dataFaceBook" [classification]="2" *ngIf="dataFaceBook"></fpn-article>
+        <fpn-article [facebookData]="dataFaceBook" [classification]="2" *ngIf="dataFaceBook"></fpn-article>
+    </div>
+</div>

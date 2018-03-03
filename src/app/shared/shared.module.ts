@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {MatIconModule} from '@angular/material/icon';
 
 import { ArticleComponent } from './article.component';
+import { ArticleDistributionComponent } from './article-distribution.component';
 
 @NgModule({
   imports: [
@@ -10,11 +11,13 @@ import { ArticleComponent } from './article.component';
     CommonModule
   ],
   declarations: [
-    ArticleComponent
+    ArticleComponent,
+    ArticleDistributionComponent
   ],
   exports: [
     ArticleComponent,
-    MatIconModule
+    MatIconModule,
+    ArticleDistributionComponent
   ]
 })
 export class SharedModule {}

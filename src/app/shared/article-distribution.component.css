@@ -1,0 +1,13 @@
+div.secondLine {
+  display: flex;
+  margin: 2%;
+}
+.element-second-line {
+  width: 100%;
+}
+
+div.thirdLine {
+  display: flex;
+  justify-content: space-around;
+  margin: 2%;
+}
