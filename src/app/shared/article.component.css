@@ -1,0 +1,39 @@
+div.article {
+  margin: 0% 2%;
+  border: black solid 3px;
+  border-radius: 16px;
+}
+
+div.article.active {
+  box-shadow: 10px 10px grey;
+}
+
+div.article
+div.header {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Alfa Slab One';
+  font-size: xx-large;
+  padding: 2%;
+}
+
+div.article
+div.body {
+  display: flex;
+  justify-content: space-around;
+}
+
+div.article
+div.body
+div.text {
+  padding: 0% 2% 2% 2%;
+  font-size: medium;
+}
+
+div.article
+div.body
+div.media
+img {
+  padding: 0% 2% 2% 2%;
+  width: 850px;
+}

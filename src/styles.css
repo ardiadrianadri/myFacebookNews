@@ -1,3 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~roboto-fontface/css/roboto/roboto-fontface.css";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~material-design-icons/iconfont/material-icons.css";
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One');
+
+.clickable {
+  cursor: pointer;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}

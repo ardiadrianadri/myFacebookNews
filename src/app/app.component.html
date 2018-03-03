@@ -1,5 +1,14 @@
-<h1>
-  Test of Facebook Login
-</h1>
-
-<button mat-raised-button color="primary" (click)="doLogin()">Login Facebook</button>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>{{title}}</span>
+    <span class="example-spacer"></span>
+    <div  *ngIf="stateStr && (stateStr !== stateNotConnected)" matTooltip="Logout">
+      <mat-icon (click)="doLogout()" class="material-icons clickable">exit_to_app</mat-icon>
+    </div>
+    <div  *ngIf="stateStr && (stateStr === stateNotConnected)" matTooltip="Login">
+      <mat-icon (click)="doLogin()" class="material-icons clickable">face</mat-icon>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<br/>
+<fpn-article></fpn-article>
