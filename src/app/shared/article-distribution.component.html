@@ -1,6 +1,15 @@
 <div *ngIf="dataFaceBook">
     <div class="firstLine">
-        <fpn-article [facebookData]="firstLineData" [classification]="{index: 0, line: 0}" (actionClose)="removeArticle($event)"></fpn-article>
+        <fpn-article
+        [facebookData]="firstLineData"
+        [classification]="{index: 0, line: 0}"
+        (actionClose)="removeArticle($event)"
+        dnd-draggable
+        [dragEnabled]="true"
+        (mousedown)="changeArticle({index: 0, line: 0})"
+        dnd-droppable
+        (onDropSuccess)="moveArticleSuccess({index: 0, line: 0})"
+        ></fpn-article>
     </div>
     <div class="secondLine">
         <fpn-article
@@ -9,6 +18,11 @@
         class="element-second-line"
         [classification]="{index: i, line: 1}"
         (actionClose)="removeArticle($event)"
+        dnd-draggable
+        [dragEnabled]="true"
+        (mousedown)="changeArticle({index: i, line: 1})"
+        dnd-droppable
+        (onDropSuccess)="moveArticleSuccess({index: i, line: 1})"
         ></fpn-article>
     </div>
     <div class="thirdLine">
@@ -16,6 +30,12 @@
         *ngFor="let article of thirdLineData; index as i"
         [facebookData]="article"
         [classification]="{index: i, line: 2}"
-        (actionClose)="removeArticle($event)"></fpn-article>
+        (actionClose)="removeArticle($event)"
+        dnd-draggable
+        [dragEnabled]="true"
+        (mousedown)="changeArticle({index: i, line: 2})"
+        dnd-droppable
+        (onDropSuccess)="moveArticleSuccess({index: i, line: 2})"
+        ></fpn-article>
     </div>
 </div>

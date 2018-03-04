@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ChangeDetectorRef } from '@angular/core';
 
 import { FacebookData, IndexesArticle } from '../core/facebook-types';
 @Component({
@@ -17,6 +17,9 @@ export class ArticleDistributionComponent implements OnInit {
   public thirdLineData: FacebookData[];
 
   private _actualIndex = 0;
+  private _from: IndexesArticle = null;
+
+  constructor (private _changeDetect: ChangeDetectorRef) {}
 
   ngOnInit() {
     console.log('Array: ', this.dataFaceBook);
@@ -48,5 +51,66 @@ export class ArticleDistributionComponent implements OnInit {
     }
 
     this._actualIndex++;
+  }
+
+  private _copyDataFacebook ({full_picture = '', message= '', description= ''}): FacebookData {
+    return {full_picture: full_picture, message: message, description: description};
+  }
+
+  public moveArticleSuccess(to: IndexesArticle) {
+    let fromArticle: FacebookData;
+    let toArticle: FacebookData;
+
+    switch (this._from.line) {
+      case 0:
+        fromArticle = this._copyDataFacebook(this.firstLineData);
+        break;
+      case 1:
+        fromArticle = this._copyDataFacebook(this.secondLineData[this._from.index]);
+        break;
+      case 2:
+        fromArticle = this._copyDataFacebook(this.thirdLineData[this._from.index]);
+    }
+
+    switch (to.line) {
+      case 0:
+        toArticle = this._copyDataFacebook(this.firstLineData);
+        break;
+      case 1:
+        toArticle = this._copyDataFacebook(this.secondLineData[to.index]);
+      break;
+      case 2:
+        toArticle = this._copyDataFacebook(this.thirdLineData[to.index]);
+      break;
+    }
+
+    switch (this._from.line) {
+      case 0:
+        this.firstLineData = this._copyDataFacebook(toArticle);
+        break;
+      case 1:
+        this.secondLineData[this._from.index] = this._copyDataFacebook(toArticle);
+        break;
+      case 2:
+        this.thirdLineData[this._from.index] = this._copyDataFacebook(toArticle);
+        break;
+    }
+
+    switch (to.line) {
+      case 0:
+        this.firstLineData = this._copyDataFacebook(fromArticle);
+        break;
+      case 1:
+        this.secondLineData[to.index] = this._copyDataFacebook(fromArticle);
+        break;
+      case 2:
+        this.thirdLineData[to.index] = this._copyDataFacebook(fromArticle);
+        break;
+    }
+
+  }
+
+  public changeArticle(from: IndexesArticle) {
+    this._from = from;
   }
 }
